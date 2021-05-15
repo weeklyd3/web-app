@@ -1,0 +1,91 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://weeklyd3.github.io/resources/style.css" />
+<style>
+body {font-family: system-ui;}
+
+/* Style the tab */
+.tab {
+  width:100%;
+  height:10%;
+  overflow: hidden;
+  background-color: #00ffff;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  width:50%;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab button:hover {
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  font-weight:bold;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display:none;
+  height:85% !important;
+  width:100%;
+}
+</style>
+</head>
+<body>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'upload')">Upload from Computer</button>
+  <button class="tablinks" onclick="openCity(event, 'visit')">View Website</button>
+</div>
+
+<div id="upload" class="tabcontent">
+  <p>First, choose the target .html file to upload:</p>
+  <button onclick="upload()">Upload a file...</button>
+  <textarea style="width:100%; height:45%;" readonly="readonly">...and you will see the source here.</textarea>
+  <hr>
+  <p>Next, fill in some details:</p>
+  <input type="text" id="name" placeholder="Your Name" />
+  <br>
+  <input type="text" id="title" placeholder="Title" />
+  <hr>
+  <p>Finally, click the button to upload the article.</p>
+  <button onclick="post()">Upload Article to Server</button>
+  <iframe src="upload.html" style="display:none;" id="uploader"></iframe>
+</div>
+
+<div id="visit" class="tabcontent">
+  <iframe src="https://weeklyd3.github.io" style="width:95%; height:95%;"></iframe>
+</div>
+<script>
+// Strict mode is coming!
+'use strict';
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  var tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
+   
+</body>
+</html> 

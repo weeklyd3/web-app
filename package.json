@@ -1,0 +1,11 @@
+{
+    "name": "desktop_application",
+	"productName": "Weekly D3 Desktop",
+    "version": "0.1.1",
+    "author": "Weekly D3",
+    "description": "Weekly D3 Desktop App",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    }
+}
