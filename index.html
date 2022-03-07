@@ -15,7 +15,7 @@ body {font-family: system-ui;}
 
 /* Style the buttons inside the tab */
 .tab button {
-  width:50%;
+  width:33.333333333333333333333%;
   background-color: inherit;
   float: left;
   border: none;
@@ -48,6 +48,7 @@ body {font-family: system-ui;}
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'upload')">Upload from Computer</button>
   <button class="tablinks" onclick="openCity(event, 'visit')">View Website</button>
+  <button class="tablinks" onclick="openCity(event, 'settings')">Settings &amp; Help</button>
 </div>
 
 <div id="upload" class="tabcontent">
@@ -68,6 +69,28 @@ body {font-family: system-ui;}
 <div id="visit" class="tabcontent">
   <iframe src="https://weeklyd3.github.io" style="width:95%; height:95%;"></iframe>
 </div>
+<div id="settings" class="tabcontent">
+	<h2>Application Help and Settings</h2>
+	<ul style="list-style:none;">
+		<li onclick="info()">Information</li>
+		<a href="gethelp.html" target="_blank" style="color:black !important; text-decoration:none; cursor:context-menu;"><li>Help</li></a>
+	</ul>
+	<style>
+		ul li::after {
+			content:">";
+			position:absolute;
+			font-family:monospace;
+			right:20px;
+		}
+		ul li:hover {
+			background-color:#a3a3a3;
+		}
+		ul li {
+			padding:7px;
+			border:1px solid black;
+		}
+	</style>
+</div>
 <script>
 // Strict mode is coming!
 'use strict';
@@ -84,7 +107,9 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
+function info() {
+	alert('Weekly D3 Desktop\nEarly Beta Version\n\nThis software is free software, the source code is available on GitHub: weeklyd3/web-app.');
+}
 </script>
    
 </body>

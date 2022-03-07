@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow } = require('electron');
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -17,13 +17,19 @@ app.whenReady().then(() => {
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+      createWindow();
     }
   });
+});
+app.on('activate', function() {
+	var windows = BrowserWindow.getAllWindows();
+	for (i=0; i<windows.length; i++) {
+		windows[i].setMenu(null);
+	}
 });
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   }
 });

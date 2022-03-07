@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	</head>
+	<title>Get Help</title>
+	<link rel="stylesheet" href="https://weeklyd3.github.io/resources/style.css" />
+	<script type="text/javascript">
+		function load(file) {
+			window.location.assign('help/'+file+'.html');
+		}
+	</script>
+	<body>
+		<style>
+			ul li::after {
+				content:">";
+				position:absolute;
+				font-family:monospace;
+				right:20px;
+			}
+			ul li:hover {
+				background-color:#a3a3a3;
+			}
+			ul li {
+				margin:3px;
+				padding:7px;
+				border:1px solid black;
+			}
+		</style>
+		<ul style="list-style:none;">
+			<li onclick="load('1');">General Information</li>
+			<li onclick="load('2');">Offline Editor</li>
+			<li onclick="load('3');">Uploader</li>
+		</ul>
+	</body>
+</html>
